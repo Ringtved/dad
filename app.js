@@ -1,22 +1,23 @@
 const express = require("express");
+const morgan = require('morgan');
+
 const app = express();
 
-// const screensRoutes = require("./api/routes/screens");
+const port = process.env.port || 3000;
 
-// Routese which should handle requests
-// app.use("/screens", screensRoutes);
-
-app.use((req, res, next) => {
-  const error = new Error("Not found");
-  error.status = 404;
-  next(error);
+app.listen(port, () => {
+  console.log(`Server listening to ${port}`);
 });
 
-app.use((error, req, res, next) => {
-  res.status(error.status || 500);
-  res.json({
-    error: { message: error.message },
-  });
+app.set('view engine', 'ejs');
+
+app.use(morgan('dev'));
+
+app.get('/', (req, res) => {
+  res.render('index.ejs');
 });
 
-module.exports = app;
+// 404 page
+app.use((req, res) => {
+  res.status(404).render('404', { title: '404' });
+});
