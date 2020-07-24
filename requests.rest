@@ -1,0 +1,18 @@
+## Get all lists of "Programming" board
+GET https://api.trello.com/1/boards/JZq9CjYb/lists?key=001b412ed7f3865daff0eb19ac3220e7&token=569e5a6878d68f0abcb169a965f22a785638fd146fe90f72b4e43862c593a575
+
+###
+## Get all cards of "Exceptions" list
+GET https://api.trello.com/1/boards/JZq9CjYb/cards?key=001b412ed7f3865daff0eb19ac3220e7&token=569e5a6878d68f0abcb169a965f22a785638fd146fe90f72b4e43862c593a575
+
+###
+## Get all members of "Programming" board
+GET https://api.trello.com/1/boards/JZq9CjYb/members?key=001b412ed7f3865daff0eb19ac3220e7&token=569e5a6878d68f0abcb169a965f22a785638fd146fe90f72b4e43862c593a575
+
+###
+## Create a new list in the "Programming" board
+POST https://api.trello.com/1/boards/JZq9CjYb/lists?key=001b412ed7f3865daff0eb19ac3220e7&token=569e5a6878d68f0abcb169a965f22a785638fd146fe90f72b4e43862c593a575&name=Test
+
+###
+## Creates a new card for the list, "Exceptions", by the idList
+POST https://api.trello.com/1/cards?key=001b412ed7f3865daff0eb19ac3220e7&token=569e5a6878d68f0abcb169a965f22a785638fd146fe90f72b4e43862c593a575&idList=5f192e4b45f8fa4456b7546c&name=karl
